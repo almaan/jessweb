@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Jess DeFranco for performances, teaching, and collaborations.">
+  <Hero title="Contact" subtitle="Let's connect" />
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Reach Out</p>
+        <h2>Get in Touch</h2>
+        <p class="text-light">
+          For inquiries about performances, collaborations, teaching, or anything else,
+          I'd love to hear from you.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:hello@jessdefranco.com">hello@jessdefranco.com</a>
+          </div>
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p class="text-light">San Francisco Bay Area, CA</p>
+          </div>
+          <div class="contact-item">
+            <h3>Social</h3>
+            <div class="social-links">
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">Vimeo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form" name="contact" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .contact-details {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-item a {
+    color: var(--color-accent);
+  }
+
+  .contact-item a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+  }
+
+  input,
+  textarea {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--color-accent);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

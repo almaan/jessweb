@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const performances = [
+  {
+    title: 'Tidal Patterns',
+    role: 'Choreographer & Performer',
+    venue: 'ODC Theater, San Francisco',
+    year: '2024',
+    description: 'An evening-length work exploring the rhythmic pull between land and sea, performed by an ensemble of five dancers with an original score.',
+  },
+  {
+    title: 'In Between Stillness',
+    role: 'Performer',
+    venue: 'CounterPulse, San Francisco',
+    year: '2024',
+    description: 'A collaborative duet examining the spaces between movement and rest, created in partnership with visual artist Elena Marques.',
+  },
+  {
+    title: "Gravity's Echo",
+    role: 'Performer',
+    venue: 'Yerba Buena Center for the Arts',
+    year: '2023',
+    description: 'A site-specific installation and performance responding to the architecture of the gallery space, commissioned for the YBCA seasonal program.',
+  },
+  {
+    title: 'Soft Architecture',
+    role: 'Choreographer & Performer',
+    venue: 'Joe Goode Annex',
+    year: '2023',
+    description: 'A solo work investigating the body as a living structure — collapsible, rebuildable, and endlessly adaptive.',
+  },
+  {
+    title: 'Undertow',
+    role: 'Performer',
+    venue: 'ODC Theater, San Francisco',
+    year: '2022',
+    description: 'Featured dancer in a large-scale ensemble work by Bay Area choreographer, exploring collective memory and inherited movement patterns.',
+  },
+  {
+    title: 'Threshold',
+    role: 'Choreographer',
+    venue: 'Dance Mission Theater',
+    year: '2022',
+    description: 'A trio examining moments of transition — the liminal space between who we were and who we are becoming.',
+  },
+];
+---
+
+<BaseLayout title="Work" description="Performances, choreography, and collaborations by Jess DeFranco.">
+  <Hero title="Work" subtitle="Selected performances & collaborations" />
+
+  <section class="section">
+    <div class="container">
+      <div class="work-list">
+        {performances.map((perf) => (
+          <article class="work-item">
+            <div class="work-item__img img-placeholder">Production photo</div>
+            <div class="work-item__content">
+              <p class="section-label">{perf.year}</p>
+              <h3>{perf.title}</h3>
+              <p class="work-item__role">{perf.role}</p>
+              <p class="text-light">{perf.venue}</p>
+              <p class="work-item__desc">{perf.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-md);
+    align-items: start;
+  }
+
+  .work-item:nth-child(even) {
+    direction: rtl;
+  }
+
+  .work-item:nth-child(even) > * {
+    direction: ltr;
+  }
+
+  .work-item__img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+
+  .work-item__role {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .work-item__desc {
+    margin-top: var(--space-sm);
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .work-item {
+      grid-template-columns: 1fr;
+    }
+
+    .work-item:nth-child(even) {
+      direction: ltr;
+    }
+
+    .work-item__img {
+      max-height: 250px;
+    }
+  }
+</style>

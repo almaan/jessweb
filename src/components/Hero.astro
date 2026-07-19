@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  fullHeight?: boolean;
+}
+
+const { title, subtitle, fullHeight = false } = Astro.props;
+---
+
+<section class:list={['hero', { 'hero--full': fullHeight }]}>
+  <div class="container hero__inner">
+    <h1 class="hero__title">{title}</h1>
+    {subtitle && <p class="hero__subtitle">{subtitle}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .hero--full {
+    min-height: 100vh;
+    padding-bottom: var(--space-xl);
+  }
+
+  .hero__inner {
+    max-width: 800px;
+  }
+
+  .hero__title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-light);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto var(--space-md);
+  }
+</style>

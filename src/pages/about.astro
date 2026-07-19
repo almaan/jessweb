@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About" description="Learn about Jess DeFranco — her background, training, and artistic vision.">
+  <Hero title="About" />
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-portrait">
+        <div class="img-placeholder about-portrait__img">Portrait photo</div>
+      </div>
+
+      <div class="about-content">
+        <p class="section-label">Bio</p>
+        <h2>Jess DeFranco</h2>
+        <p>
+          Jess DeFranco is a contemporary dancer, choreographer, and movement artist based in the
+          San Francisco Bay Area. Her work draws on modern and contemporary dance traditions while
+          embracing improvisation, somatic practices, and site-specific performance.
+        </p>
+        <p>
+          With a deep commitment to embodied expression, Jess has performed with companies and
+          independent choreographers across the Bay Area. Her collaborative practice spans stage
+          performance, film, gallery installations, and community engagement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <p class="section-label">Training</p>
+      <h2>Background</h2>
+      <div class="training-grid">
+        <div class="training-item">
+          <h3>Formal Training</h3>
+          <p class="text-light">
+            BFA in Dance from a leading conservatory program, with concentrated study in contemporary
+            technique, improvisation, and choreographic methods.
+          </p>
+        </div>
+        <div class="training-item">
+          <h3>Somatic Practices</h3>
+          <p class="text-light">
+            Ongoing study in Alexander Technique, Feldenkrais Method, and Body-Mind Centering,
+            informing both her performance and teaching practice.
+          </p>
+        </div>
+        <div class="training-item">
+          <h3>Continuing Study</h3>
+          <p class="text-light">
+            Regular workshops and intensives with internationally recognized choreographers and
+            movement researchers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container statement">
+      <p class="section-label">Artist Statement</p>
+      <blockquote>
+        I believe the body carries knowledge that words cannot hold. My work is an ongoing
+        inquiry into how movement can reveal the unseen — the tensions between stillness and
+        action, vulnerability and strength, self and space. I make dances that invite audiences
+        to feel before they understand.
+      </blockquote>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .about-portrait__img {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+  }
+
+  .training-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .statement {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    border: none;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-portrait__img {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .training-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

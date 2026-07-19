@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const classes = [
+  {
+    title: 'Contemporary Technique',
+    level: 'Intermediate / Advanced',
+    description: 'A rigorous technique class grounded in floor work, weight sharing, and dynamic phrasing. Emphasis on efficiency of movement, spatial awareness, and musicality.',
+  },
+  {
+    title: 'Improvisation & Composition',
+    level: 'All Levels',
+    description: 'An exploratory practice using structured improvisation scores to develop spontaneous decision-making, presence, and compositional awareness.',
+  },
+  {
+    title: 'Somatic Movement',
+    level: 'All Levels',
+    description: 'A gentle, inward-focused class drawing on Feldenkrais, Alexander Technique, and Body-Mind Centering to cultivate body awareness and ease of movement.',
+  },
+  {
+    title: 'Choreographic Lab',
+    level: 'Advanced / Professional',
+    description: 'A workshop-style intensive for dancers and choreographers to develop new material, receive feedback, and investigate personal movement vocabulary.',
+  },
+];
+---
+
+<BaseLayout title="Teaching" description="Classes, workshops, and teaching philosophy by Jess DeFranco.">
+  <Hero title="Teaching" subtitle="Classes, workshops & mentorship" />
+
+  <section class="section">
+    <div class="container philosophy">
+      <p class="section-label">Philosophy</p>
+      <h2>Approach to Teaching</h2>
+      <p>
+        My teaching is rooted in the belief that every body has its own intelligence. I create
+        environments where technical rigor meets creative freedom — where dancers can build
+        strength and skill while also discovering their unique movement voice. Whether in a
+        technique class or an improvisation lab, I aim to cultivate curiosity, risk-taking,
+        and deep physical listening.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <p class="section-label">Offerings</p>
+      <h2>Classes & Workshops</h2>
+      <div class="classes-grid">
+        {classes.map((cls) => (
+          <div class="class-card">
+            <h3>{cls.title}</h3>
+            <p class="class-card__level">{cls.level}</p>
+            <p class="text-light">{cls.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container availability text-center">
+      <p class="section-label">Availability</p>
+      <h2>Work With Me</h2>
+      <p class="text-light">
+        I am available for guest teaching, workshops, residencies, and private sessions in the
+        San Francisco Bay Area and beyond. Reach out to discuss your needs.
+      </p>
+      <a href="/contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .philosophy {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .philosophy p:not(.section-label) {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .class-card {
+    padding: var(--space-md);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+  }
+
+  .class-card__level {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .availability {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .availability .btn {
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 768px) {
+    .classes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

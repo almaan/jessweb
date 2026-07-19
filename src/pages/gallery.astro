@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const images = [
+  { alt: 'Performance at ODC Theater', aspect: '3 / 4' },
+  { alt: 'Studio rehearsal', aspect: '4 / 3' },
+  { alt: 'Site-specific work at YBCA', aspect: '1 / 1' },
+  { alt: 'Contemporary technique class', aspect: '4 / 3' },
+  { alt: 'Duet performance', aspect: '3 / 4' },
+  { alt: 'Outdoor improvisation', aspect: '4 / 3' },
+  { alt: 'Solo performance', aspect: '3 / 4' },
+  { alt: 'Workshop at Dance Mission', aspect: '1 / 1' },
+  { alt: 'Behind the scenes', aspect: '4 / 3' },
+];
+---
+
+<BaseLayout title="Gallery" description="Photo gallery of Jess DeFranco's performances, rehearsals, and teaching.">
+  <Hero title="Gallery" subtitle="Moments in motion" />
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-grid">
+        {images.map((img) => (
+          <div class="gallery-item img-placeholder" style={`aspect-ratio: ${img.aspect};`}>
+            {img.alt}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gallery-grid {
+    columns: 3;
+    column-gap: var(--space-sm);
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: var(--space-sm);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 1024px) {
+    .gallery-grid {
+      columns: 2;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid {
+      columns: 1;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+</style>

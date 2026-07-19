@@ -1,0 +1,67 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">Jess DeFranco</p>
+      <p class="footer__location text-light">San Francisco Bay Area</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="mailto:hello@jessdefranco.com" aria-label="Email">Email</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+      <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer" aria-label="Vimeo">Vimeo</a>
+    </div>
+
+    <p class="footer__copy text-light">
+      &copy; {year} Jess DeFranco. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-lg) 0 var(--space-md);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .footer__name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+  }
+
+  .footer__location {
+    font-size: 0.85rem;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer__links a {
+    color: var(--color-text-light);
+  }
+
+  .footer__links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer__copy {
+    font-size: 0.75rem;
+    margin-top: var(--space-sm);
+  }
+</style>

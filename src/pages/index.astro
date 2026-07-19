@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Home">
+  <Hero
+    title="Jess DeFranco"
+    subtitle="Contemporary dancer & movement artist based in the San Francisco Bay Area"
+    fullHeight
+  >
+    <a href="/about" class="btn">Learn More</a>
+  </Hero>
+
+  <section class="section">
+    <div class="container intro">
+      <p class="section-label">Welcome</p>
+      <h2>Movement as language</h2>
+      <p class="intro__text">
+        With roots in contemporary and modern dance, Jess DeFranco creates work that explores the
+        intersection of physicality, emotion, and space. Through performance, collaboration, and
+        teaching, she seeks to expand the possibilities of what the body can communicate.
+      </p>
+      <a href="/work" class="btn">View Work</a>
+    </div>
+  </section>
+
+  <section class="section highlights">
+    <div class="container">
+      <p class="section-label">Featured</p>
+      <h2>Recent Work</h2>
+      <div class="highlights__grid">
+        <div class="highlight-card">
+          <div class="img-placeholder highlight-card__img">Performance photo</div>
+          <h3>Tidal Patterns</h3>
+          <p class="text-light">ODC Theater, San Francisco &mdash; 2024</p>
+        </div>
+        <div class="highlight-card">
+          <div class="img-placeholder highlight-card__img">Performance photo</div>
+          <h3>In Between Stillness</h3>
+          <p class="text-light">CounterPulse, San Francisco &mdash; 2024</p>
+        </div>
+        <div class="highlight-card">
+          <div class="img-placeholder highlight-card__img">Performance photo</div>
+          <h3>Gravity's Echo</h3>
+          <p class="text-light">YBCA, San Francisco &mdash; 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .intro__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlights {
+    background: var(--color-bg-alt);
+  }
+
+  .highlights__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .highlight-card__img {
+    aspect-ratio: 3 / 4;
+    margin-bottom: var(--space-sm);
+  }
+
+  @media (max-width: 768px) {
+    .highlights__grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
