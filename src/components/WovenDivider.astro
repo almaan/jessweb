@@ -1,0 +1,41 @@
+---
+// Woven divider — a thin band inspired by Filipino handwoven textiles
+// (binakol / inabel), used as a section separator on interior pages.
+interface Props {
+  class?: string;
+}
+---
+
+<div class:list={['woven-divider', Astro.props.class]} aria-hidden="true">
+  <svg viewBox="0 0 240 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <!-- one weave unit: nested diamonds with a small cross, tiled horizontally -->
+      <pattern id="weave" x="0" y="0" width="40" height="24" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke-width="1">
+          <path d="M20 2 L38 12 L20 22 L2 12 Z" stroke="var(--color-mint)" />
+          <path d="M20 7 L31 12 L20 17 L9 12 Z" stroke="var(--color-accent)" opacity="0.8" />
+          <line x1="20" y1="9.5" x2="20" y2="14.5" stroke="var(--color-accent)" />
+          <line x1="17.5" y1="12" x2="22.5" y2="12" stroke="var(--color-accent)" />
+        </g>
+      </pattern>
+    </defs>
+    <line x1="0" y1="2" x2="240" y2="2" stroke="var(--color-mint)" stroke-width="0.6" opacity="0.5" />
+    <rect x="0" y="0" width="240" height="24" fill="url(#weave)" />
+    <line x1="0" y1="22" x2="240" y2="22" stroke="var(--color-mint)" stroke-width="0.6" opacity="0.5" />
+  </svg>
+</div>
+
+<style>
+  .woven-divider {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-md) 0;
+  }
+
+  .woven-divider svg {
+    width: 100%;
+    max-width: 480px;
+    height: 24px;
+    opacity: 0.75;
+  }
+</style>

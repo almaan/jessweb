@@ -1,0 +1,21 @@
+# Gallery Instagram posts
+#
+# Paste one Instagram post URL per line. That's it.
+# On Instagram: open the post, tap ... (or Share) -> "Copy link", paste below.
+#
+# - Order here = order on the page (top line shows first).
+# - Blank lines and lines starting with "#" are ignored.
+# - To remove a post from the gallery, delete its line (or comment it out with #).
+# - Works with /p/... and /reel/... links from the PUBLIC account @small_jess95.
+#
+# Replace the placeholders below with real links:
+
+https://www.instagram.com/p/DPXKTgeAVtB/
+https://www.instagram.com/p/DK-zsD4y1I3/
+https://www.instagram.com/p/C-HPEbVxU_H/
+https://www.instagram.com/p/DKxv4OIBXWO/
+https://www.instagram.com/p/Cyo6Vnevhb3/
+https://www.instagram.com/p/Cw8kMuDSEz4/
+https://www.instagram.com/p/DU9UkhEEoSo/
+https://www.instagram.com/p/CvfFUrqrKGC/
+https://www.instagram.com/p/DPElmTWEeEm/

@@ -5,6 +5,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
 
+/* Maragsa Display — self-hosted display font for headings (test).
+   File: public/fonts/maragsa.otf  (license: Freeware, fontspace.com)
+   NOTE: confirm the license permits web embedding before deploying publicly. */
+@font-face {
+  font-family: 'Maragsa';
+  src: url('/fonts/maragsa.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- Custom Properties --- */
 :root {
   --color-bg: #faf9f6;
@@ -18,7 +29,7 @@
   --color-border: #d4ede0;
   --color-white: #ffffff;
 
-  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Maragsa', 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --max-width: 1100px;
@@ -159,6 +170,28 @@ p {
   color: var(--color-text-light);
   font-size: 0.85rem;
   font-style: italic;
+}
+
+/* --- Scroll reveal --- */
+/* Hidden state only applies when JS is active (html.js), so no-JS users see
+   everything normally. Reduced-motion users get instant, motion-free reveal. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* --- Responsive --- */

@@ -17,7 +17,7 @@ import FloralDivider from '../components/FloralDivider.astro';
   </section>
 
   <section class="section">
-    <div class="container intro">
+    <div class="container intro reveal">
       <FloralDivider />
       <p class="intro__text">
         Jess DeFranco grew up in the Bay Area and is a San Francisco based dancer and dance educator.
@@ -33,17 +33,17 @@ import FloralDivider from '../components/FloralDivider.astro';
       <p class="section-label">Featured</p>
       <h2>Recent Work</h2>
       <div class="highlights__grid">
-        <div class="highlight-card">
+        <div class="highlight-card reveal">
           <img src="/images/burden_of_proof_poster.jpg" alt="Burden of Proof — KULARTS production poster" class="highlight-card__img" />
           <h3>Burden of Proof</h3>
           <p class="text-light">KULARTS &mdash; 2025</p>
         </div>
-        <div class="highlight-card">
+        <div class="highlight-card reveal">
           <img src="/images/endure_bw.jpg" alt="Jess DeFranco performing in Endure" class="highlight-card__img" />
           <h3>Endure</h3>
           <p class="text-light">Dance Mission Theater &mdash; 2025</p>
         </div>
-        <div class="highlight-card">
+        <div class="highlight-card reveal">
           <img src="/images/queering.jpg" alt="Queering Pilipinx Aesthetics — KULARTS production poster" class="highlight-card__img" />
           <h3>Queering Pilipinx Aesthetics</h3>
           <p class="text-light">KULARTS &mdash; 2024</p>
@@ -56,7 +56,7 @@ import FloralDivider from '../components/FloralDivider.astro';
   </section>
 
   <section class="section collaborators">
-    <div class="container text-center">
+    <div class="container text-center reveal">
       <p class="section-label">Collaborators</p>
       <div class="collaborators__list">
         <span>KULARTS</span>
@@ -148,6 +148,15 @@ import FloralDivider from '../components/FloralDivider.astro';
     margin-bottom: var(--space-sm);
     width: 100%;
     object-fit: cover;
+  }
+
+  /* stagger the featured cards as they reveal */
+  .highlights__grid .reveal:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .highlights__grid .reveal:nth-child(3) {
+    transition-delay: 0.2s;
   }
 
   @media (max-width: 768px) {

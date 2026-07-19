@@ -2,57 +2,56 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 
-const classes = [
+const focus = [
   {
-    title: 'Contemporary Technique',
-    level: 'Intermediate / Advanced',
-    description: 'A rigorous technique class grounded in floor work, weight sharing, and dynamic phrasing. Emphasis on efficiency of movement, spatial awareness, and musicality.',
+    title: 'Showing up fully from the start',
+    description:
+      'I encourage dancers to commit to the movement right away rather than just marking steps. Practicing full-out builds the genuine stamina, spatial awareness, and muscle memory needed to feel confident on stage.',
   },
   {
-    title: 'Improvisation & Composition',
-    level: 'All Levels',
-    description: 'An exploratory practice using structured improvisation scores to develop spontaneous decision-making, presence, and compositional awareness.',
+    title: 'Bringing intention early',
+    description:
+      'We tap into emotional expression and dynamic intent early in the studio. When the feeling behind the movement becomes second nature, the technical execution follows naturally, leaving dancers free to truly shine in the theater.',
   },
   {
-    title: 'Somatic Movement',
-    level: 'All Levels',
-    description: 'A gentle, inward-focused class drawing on Feldenkrais, Alexander Technique, and Body-Mind Centering to cultivate body awareness and ease of movement.',
+    title: 'Deeply listening to the music',
+    description:
+      'I teach dancers how to break down and connect with musical structures. Developing that precise rhythmic timing allows them to really elevate the choreography and captivate whoever is watching.',
   },
   {
-    title: 'Choreographic Lab',
-    level: 'Advanced / Professional',
-    description: 'A workshop-style intensive for dancers and choreographers to develop new material, receive feedback, and investigate personal movement vocabulary.',
+    title: 'Cultivating versatility and focus',
+    description:
+      'My goal is to nurture adaptable, quick-studying artists who hold a deep respect for a choreographer’s technical vision while confidently holding space for their own artistic voice.',
   },
 ];
 ---
 
-<BaseLayout title="Teaching" description="Classes, workshops, and teaching philosophy by Jess DeFranco.">
-  <Hero title="Teaching" subtitle="Classes, workshops & mentorship" />
+<BaseLayout title="Teaching" description="Jess DeFranco teaches young dancers at San Francisco Youth Ballet, where she leads the young children's program.">
+  <Hero title="Teaching" subtitle="Growing the next generation of dancers" />
 
   <section class="section">
-    <div class="container philosophy">
+    <div class="container philosophy reveal">
       <p class="section-label">Philosophy</p>
       <h2>Approach to Teaching</h2>
       <p>
-        My teaching is rooted in the belief that every body has its own intelligence. I create
-        environments where technical rigor meets creative freedom — where dancers can build
-        strength and skill while also discovering their unique movement voice. Whether in a
-        technique class or an improvisation lab, I aim to cultivate curiosity, risk-taking,
-        and deep physical listening.
+        My approach to dance education is all about building strong physical conditioning, precise
+        musicality, and a reliable work ethic, starting from day one in the studio. For me,
+        performance quality isn't something we just tack on at the very end of a rehearsal process;
+        it's a practice we build into how we show up and move every single day. I want my students
+        to feel supported, grounded, and ready to tap into their full potential.
       </p>
     </div>
   </section>
 
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
-      <p class="section-label">Offerings</p>
-      <h2>Classes & Workshops</h2>
-      <div class="classes-grid">
-        {classes.map((cls) => (
-          <div class="class-card">
-            <h3>{cls.title}</h3>
-            <p class="class-card__level">{cls.level}</p>
-            <p class="text-light">{cls.description}</p>
+      <p class="section-label">In My Classes</p>
+      <h2>What We Focus On</h2>
+      <div class="focus-grid">
+        {focus.map((item) => (
+          <div class="focus-card reveal">
+            <h3>{item.title}</h3>
+            <p class="text-light">{item.description}</p>
           </div>
         ))}
       </div>
@@ -60,14 +59,23 @@ const classes = [
   </section>
 
   <section class="section">
-    <div class="container availability text-center">
-      <p class="section-label">Availability</p>
-      <h2>Work With Me</h2>
+    <div class="container teaching-role reveal">
+      <p class="section-label">Where I Teach</p>
+      <h2>San Francisco Youth Ballet</h2>
       <p class="text-light">
-        I am available for guest teaching, workshops, residencies, and private sessions in the
-        San Francisco Bay Area and beyond. Reach out to discuss your needs.
+        I have been a member of the faculty at San Francisco Youth Ballet since 2019. In 2022, I
+        became head of the young children's program, where I guide our youngest dancers through
+        their very first steps in ballet — helping them develop coordination, musicality, and a
+        genuine excitement for the studio.
       </p>
-      <a href="/contact" class="btn">Get in Touch</a>
+      <a
+        href="https://www.sanfranciscoyouthballet.org/faculty"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        View SFYB Faculty
+      </a>
     </div>
   </section>
 </BaseLayout>
@@ -84,39 +92,49 @@ const classes = [
     line-height: 1.8;
   }
 
-  .classes-grid {
+  .focus-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
     margin-top: var(--space-md);
   }
 
-  .class-card {
+  .focus-card {
     padding: var(--space-md);
     background: var(--color-white);
     border: 1px solid var(--color-border);
   }
 
-  .class-card__level {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .focus-grid .reveal:nth-child(2) {
+    transition-delay: 0.08s;
+  }
+
+  .focus-grid .reveal:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+
+  .focus-grid .reveal:nth-child(4) {
+    transition-delay: 0.24s;
+  }
+
+  .focus-card h3 {
     color: var(--color-accent);
     margin-bottom: var(--space-sm);
   }
 
-  .availability {
-    max-width: 600px;
+  .teaching-role {
+    max-width: 750px;
     margin: 0 auto;
   }
 
-  .availability .btn {
-    margin-top: var(--space-sm);
+  .teaching-role p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
   }
 
   @media (max-width: 768px) {
-    .classes-grid {
+    .focus-grid {
       grid-template-columns: 1fr;
     }
   }

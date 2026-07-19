@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import WovenDivider from '../components/WovenDivider.astro';
 
 const performances = [
   {
@@ -150,11 +151,15 @@ const performances = [
 <BaseLayout title="Work" description="Performances, choreography, and collaborations by Jess DeFranco.">
   <Hero title="Work" subtitle="Selected performances & collaborations" />
 
-  <section class="section">
+  <div class="container">
+    <WovenDivider />
+  </div>
+
+  <section class="section" style="padding-top: var(--space-md);">
     <div class="container">
       <div class="work-list">
         {performances.map((perf) => (
-          <article class="work-item">
+          <article class="work-item reveal">
             {perf.image
               ? <img src={perf.image} alt={perf.title} class="work-item__img" />
               : <div class="work-item__img work-item__title-card"><span>{perf.title}</span></div>

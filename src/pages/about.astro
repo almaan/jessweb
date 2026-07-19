@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import WovenDivider from '../components/WovenDivider.astro';
 ---
 
 <BaseLayout title="About" description="Learn about Jess DeFranco — her background, training, and artistic vision.">
@@ -8,48 +9,56 @@ import Hero from '../components/Hero.astro';
 
   <section class="section">
     <div class="container about-grid">
-      <div class="about-portrait">
+      <div class="about-portrait reveal">
         <img src="/images/main-portrait.jpg" alt="Jess DeFranco" class="about-portrait__img" />
       </div>
 
-      <div class="about-content">
+      <div class="about-content reveal">
         <p class="section-label">Bio</p>
         <h2>Jess DeFranco</h2>
         <p>
-          I grew up in the Bay Area and am a San Francisco based dancer. After receiving
+          I grew up in the Bay Area and am a San Francisco-based dancer. After receiving
           my Bachelor of Arts in Dance and Asian American Studies from San Francisco State University,
           I began working as a freelance performing artist and dance educator.
         </p>
         <p>
-          My first collaboration with KULARTS was in 2022 and 2023 with "Nursing these Wounds",
-          followed by the "AntingAnting Project" and presenting my choreography in "Queering Pilipinx
-          Aesthetics" in 2024.
+          My practice integrates a strong classical foundation with dynamic contemporary training.
+          As a mover, I focus on a highly athletic, versatile, and musically precise approach to
+          choreography. In the studio, I pride myself on being a dependable and quick-studying
+          collaborator who brings consistent energy and physical commitment to every project.
+        </p>
+        <p>
+          I'm always open to new opportunities, collaborations, and creative challenges.
         </p>
         <a href="/jess-defranco-resume.pdf" target="_blank" class="btn" style="margin-top: var(--space-sm);">Download Resume</a>
       </div>
     </div>
   </section>
 
+  <div class="container">
+    <WovenDivider />
+  </div>
+
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
       <p class="section-label">Training</p>
       <h2>Background</h2>
       <div class="training-grid">
-        <div class="training-item">
+        <div class="training-item reveal">
           <h3>San Francisco State University</h3>
           <p class="training-item__years">2014–2018</p>
           <p class="text-light">
             Bachelor of Arts in Dance, Minor in Asian American Studies. Member of the University Dance Theater Company.
           </p>
         </div>
-        <div class="training-item">
+        <div class="training-item reveal">
           <h3>Alonzo King LINES Ballet</h3>
           <p class="training-item__years">Summer 2017</p>
           <p class="text-light">
             Summer intensive program at one of the world's premier contemporary ballet companies in San Francisco.
           </p>
         </div>
-        <div class="training-item">
+        <div class="training-item reveal">
           <h3>Pacific Ballet Academy</h3>
           <p class="training-item__years">2012–2014</p>
           <p class="text-light">
@@ -80,6 +89,14 @@ import Hero from '../components/Hero.astro';
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
     margin-top: var(--space-md);
+  }
+
+  .training-grid .reveal:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .training-grid .reveal:nth-child(3) {
+    transition-delay: 0.2s;
   }
 
   .training-item__years {

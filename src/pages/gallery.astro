@@ -1,29 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import InstagramEmbed from '../components/InstagramEmbed.astro';
+// Featured posts are read at build time from a single plain-text file:
+//   src/data/gallery-links.txt  (one Instagram URL per line)
+// Just edit that file to add/remove/reorder posts — no code changes needed.
+import raw from '../data/gallery-links.txt?raw';
 
-const images = [
-  { alt: 'Performance at ODC Theater', aspect: '3 / 4' },
-  { alt: 'Studio rehearsal', aspect: '4 / 3' },
-  { alt: 'Site-specific work at YBCA', aspect: '1 / 1' },
-  { alt: 'Contemporary technique class', aspect: '4 / 3' },
-  { alt: 'Duet performance', aspect: '3 / 4' },
-  { alt: 'Outdoor improvisation', aspect: '4 / 3' },
-  { alt: 'Solo performance', aspect: '3 / 4' },
-  { alt: 'Workshop at Dance Mission', aspect: '1 / 1' },
-  { alt: 'Behind the scenes', aspect: '4 / 3' },
-];
+const posts = raw
+  .split('\n')
+  .map((line) => line.trim())
+  .filter((line) => line && !line.startsWith('#'));
 ---
 
-<BaseLayout title="Gallery" description="Photo gallery of Jess DeFranco's performances, rehearsals, and teaching.">
-  <Hero title="Gallery" subtitle="Moments in motion" />
+<BaseLayout title="Gallery" description="Moments in motion — featured posts from Jess DeFranco's Instagram.">
+  <Hero title="Gallery" subtitle="On stage & in studio" />
 
   <section class="section">
     <div class="container">
-      <div class="gallery-grid">
-        {images.map((img) => (
-          <div class="gallery-item img-placeholder" style={`aspect-ratio: ${img.aspect};`}>
-            {img.alt}
+      <div class="embed-grid">
+        {posts.map((url) => (
+          <div class="embed-item">
+            <InstagramEmbed url={url} />
           </div>
         ))}
       </div>
@@ -31,34 +29,22 @@ const images = [
   </section>
 </BaseLayout>
 
+<!-- Loads once for this page only; hydrates the blockquotes above into rich cards. -->
+<script async src="https://www.instagram.com/embed.js" is:inline></script>
+
 <style>
-  .gallery-grid {
-    columns: 3;
-    column-gap: var(--space-sm);
+  .embed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-md);
+    align-items: start;
+    justify-items: center;
   }
 
-  .gallery-item {
-    break-inside: avoid;
-    margin-bottom: var(--space-sm);
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-
-  .gallery-item:hover {
-    opacity: 0.85;
-  }
-
-  @media (max-width: 1024px) {
-    .gallery-grid {
-      columns: 2;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .gallery-grid {
-      columns: 1;
-      max-width: 400px;
-      margin: 0 auto;
-    }
+  /* Instagram's blockquote ships with wide default margins; tighten so the
+     grid stays even before embed.js swaps in the final iframe. */
+  .embed-item :global(.instagram-media) {
+    margin: 0 auto !important;
+    min-width: 0 !important;
   }
 </style>
