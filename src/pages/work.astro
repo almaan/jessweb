@@ -4,46 +4,145 @@ import Hero from '../components/Hero.astro';
 
 const performances = [
   {
-    title: 'Tidal Patterns',
-    role: 'Choreographer & Performer',
-    venue: 'ODC Theater, San Francisco',
-    year: '2024',
-    description: 'An evening-length work exploring the rhythmic pull between land and sea, performed by an ensemble of five dancers with an original score.',
+    title: 'Burden of Proof',
+    role: 'Dancer',
+    company: 'KULARTS',
+    venue: 'Bindlestiff Studio, San Francisco',
+    year: '2025',
+    description: 'An immersive multimedia dance performance directed and choreographed by Alleluia Panis, exploring the lasting trauma of injustice endured by a fictional immigrant family. Inspired by the true story of Pilipina nurses wrongfully convicted in 1975.',
+    link: 'https://www.kularts-sf.org/burden-of-proof-2025-2027',
+    image: '/images/burden_of_proof_poster.jpg',
   },
   {
-    title: 'In Between Stillness',
-    role: 'Performer',
-    venue: 'CounterPulse, San Francisco',
-    year: '2024',
-    description: 'A collaborative duet examining the spaces between movement and rest, created in partnership with visual artist Elena Marques.',
+    title: 'Endure',
+    role: 'Dancer',
+    company: 'Alyssa Eve Mitchel',
+    venue: 'Dance Mission Theater, San Francisco',
+    year: '2025',
+    description: 'A 70-minute work exploring marathon running and endurance through 17 choreographed sections, blending dance with recorded runner interviews.',
+    link: 'https://www.alyssaevemitchel.com/endure.html',
+    image: '/images/endure_bw.jpg',
   },
   {
-    title: "Gravity's Echo",
-    role: 'Performer',
-    venue: 'Yerba Buena Center for the Arts',
-    year: '2023',
-    description: 'A site-specific installation and performance responding to the architecture of the gallery space, commissioned for the YBCA seasonal program.',
-  },
-  {
-    title: 'Soft Architecture',
-    role: 'Choreographer & Performer',
-    venue: 'Joe Goode Annex',
-    year: '2023',
-    description: 'A solo work investigating the body as a living structure — collapsible, rebuildable, and endlessly adaptive.',
-  },
-  {
-    title: 'Undertow',
-    role: 'Performer',
-    venue: 'ODC Theater, San Francisco',
-    year: '2022',
-    description: 'Featured dancer in a large-scale ensemble work by Bay Area choreographer, exploring collective memory and inherited movement patterns.',
-  },
-  {
-    title: 'Threshold',
+    title: 'Queering Pilipinx Aesthetics',
     role: 'Choreographer',
-    venue: 'Dance Mission Theater',
+    company: 'KULARTS',
+    venue: 'San Francisco',
+    year: '2024',
+    description: 'Presented original choreography as part of KULARTS\' program exploring Pilipinx identity and aesthetics.',
+    image: '/images/queering.jpg',
+  },
+  {
+    title: 'Anting-Anting',
+    role: 'Performer',
+    company: 'KULARTS',
+    venue: 'Asian Arts Museum, San Francisco',
+    year: '2024',
+  },
+  {
+    title: 'Trolley Dances 2023',
+    role: 'Performer',
+    company: 'Epiphany Dance Theater',
+    venue: 'San Francisco',
+    year: '2023',
+  },
+  {
+    title: 'Nursing These Wounds',
+    role: 'Performer',
+    company: 'KULARTS',
+    venue: 'ODC Theater & Brava Theater Cabaret, San Francisco',
+    year: '2022–2023',
+  },
+  {
+    title: 'Regard',
+    role: 'Performer',
+    company: 'Alyssa Mitchel',
+    venue: 'Contemporary Jewish Museum, San Francisco',
+    year: '2023',
+  },
+  {
+    title: 'The Gaze',
+    role: 'Performer',
+    company: 'Andrea Salazar',
+    venue: 'SAFEhouse for the Arts, San Francisco',
+    year: '2023',
+  },
+  {
+    title: 'Pulsing',
+    role: 'Performer',
+    company: 'Andrea Salazar (ODC Pilot 73)',
+    venue: 'ODC Theater, San Francisco',
     year: '2022',
-    description: 'A trio examining moments of transition — the liminal space between who we were and who we are becoming.',
+  },
+  {
+    title: 'Roll Out',
+    role: 'Performer',
+    company: 'Garrett + Moulton Productions',
+    venue: 'ODC Theater, San Francisco',
+    year: '2022',
+  },
+  {
+    title: 'The Culture of Love',
+    role: 'Performer',
+    company: "Tim Rubel's Human Shakes",
+    venue: 'TAIMU',
+    year: '2022',
+  },
+  {
+    title: 'Here. Now.',
+    role: 'Performer',
+    company: 'Alyssa Mitchel',
+    venue: 'Exploratorium, San Francisco',
+    year: '2021',
+  },
+  {
+    title: 'Flood Building Residency',
+    role: 'Performer',
+    company: 'Robert Moses Kin',
+    venue: 'San Francisco',
+    year: '2021',
+  },
+  {
+    title: 'Impact & Acclimate',
+    role: 'Performer',
+    company: 'Kristin Damrow and Company',
+    venue: 'Oakland Museum Open Spaces Symposium',
+    year: '2020',
+  },
+  {
+    title: 'The Classroom',
+    role: 'Performer',
+    company: 'Alyssa Mitchel',
+    venue: 'San Francisco',
+    year: '2019',
+  },
+  {
+    title: 'Ball Passing',
+    role: 'Performer',
+    company: 'Garrett + Moulton Productions',
+    venue: 'YBCA, San Francisco',
+    year: '2019',
+  },
+  {
+    title: 'Frustration',
+    role: 'Performer',
+    company: 'Alyssa Mitchel (ODC Pilot 71)',
+    venue: 'ODC Theater, San Francisco',
+    year: '2019',
+  },
+  {
+    title: 'Free-For-All',
+    role: 'Performer',
+    company: 'Garrett + Moulton Productions',
+    venue: 'JCCSF, San Francisco',
+    year: '2018',
+  },
+  {
+    title: 'Stabat Mater & Mad Brass',
+    role: 'Performer',
+    company: 'Garrett + Moulton Productions',
+    venue: 'YBCA, San Francisco',
+    year: '2018',
   },
 ];
 ---
@@ -56,13 +155,17 @@ const performances = [
       <div class="work-list">
         {performances.map((perf) => (
           <article class="work-item">
-            <div class="work-item__img img-placeholder">Production photo</div>
+            {perf.image
+              ? <img src={perf.image} alt={perf.title} class="work-item__img" />
+              : <div class="work-item__img img-placeholder">Production photo</div>
+            }
             <div class="work-item__content">
               <p class="section-label">{perf.year}</p>
               <h3>{perf.title}</h3>
-              <p class="work-item__role">{perf.role}</p>
+              <p class="work-item__role">{perf.role} {perf.company && <span class="text-light">with {perf.company}</span>}</p>
               <p class="text-light">{perf.venue}</p>
-              <p class="work-item__desc">{perf.description}</p>
+              {perf.description && <p class="work-item__desc">{perf.description}</p>}
+              {perf.link && <a href={perf.link} target="_blank" rel="noopener noreferrer" class="work-item__link">Learn more &rarr;</a>}
             </div>
           </article>
         ))}
@@ -96,6 +199,7 @@ const performances = [
   .work-item__img {
     aspect-ratio: 4 / 3;
     width: 100%;
+    object-fit: cover;
   }
 
   .work-item__role {
@@ -107,6 +211,18 @@ const performances = [
   .work-item__desc {
     margin-top: var(--space-sm);
     color: var(--color-text-light);
+  }
+
+  .work-item__link {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .work-item__link:hover {
+    color: var(--color-accent-hover);
   }
 
   @media (max-width: 768px) {

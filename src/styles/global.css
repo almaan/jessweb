@@ -8,12 +8,14 @@
 /* --- Custom Properties --- */
 :root {
   --color-bg: #faf9f6;
-  --color-bg-alt: #f3f1ec;
+  --color-bg-alt: #f0f5f2;
   --color-text: #2d2d2d;
   --color-text-light: #6b6b6b;
-  --color-accent: #c4a08a;
-  --color-accent-hover: #b08a72;
-  --color-border: #e5e2dc;
+  --color-accent: #c9a84c;
+  --color-accent-hover: #b8952f;
+  --color-mint: #a8d5ba;
+  --color-mint-light: #d4ede0;
+  --color-border: #d4ede0;
   --color-white: #ffffff;
 
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -142,8 +144,9 @@ p {
 }
 
 .btn:hover {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
 }
 
 /* --- Image Placeholder --- */

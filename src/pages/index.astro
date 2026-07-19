@@ -1,27 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import FloralDivider from '../components/FloralDivider.astro';
 ---
 
 <BaseLayout title="Home">
-  <Hero
-    title="Jess DeFranco"
-    subtitle="Contemporary dancer & movement artist based in the San Francisco Bay Area"
-    fullHeight
-  >
-    <a href="/about" class="btn">Learn More</a>
-  </Hero>
+  <section class="hero-home">
+    <div class="hero-home__image">
+      <img src="/images/jess-hero.jpg" alt="Jess DeFranco performing — mid-air leap in costume" />
+    </div>
+    <div class="hero-home__content">
+      <h1>Jess DeFranco</h1>
+      <p class="hero-home__subtitle">San Francisco dancer & dance educator</p>
+      <a href="/about" class="btn">Learn More</a>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container intro">
-      <p class="section-label">Welcome</p>
-      <h2>Movement as language</h2>
+      <FloralDivider />
       <p class="intro__text">
-        With roots in contemporary and modern dance, Jess DeFranco creates work that explores the
-        intersection of physicality, emotion, and space. Through performance, collaboration, and
-        teaching, she seeks to expand the possibilities of what the body can communicate.
+        Jess DeFranco grew up in the Bay Area and is a San Francisco based dancer and dance educator.
+        After receiving her Bachelor of Arts in Dance and Asian American Studies from San Francisco
+        State University, she began working as a freelance performing artist.
       </p>
-      <a href="/work" class="btn">View Work</a>
+      <a href="/about" class="btn">More About Jess</a>
     </div>
   </section>
 
@@ -31,26 +34,91 @@ import Hero from '../components/Hero.astro';
       <h2>Recent Work</h2>
       <div class="highlights__grid">
         <div class="highlight-card">
-          <div class="img-placeholder highlight-card__img">Performance photo</div>
-          <h3>Tidal Patterns</h3>
-          <p class="text-light">ODC Theater, San Francisco &mdash; 2024</p>
+          <img src="/images/burden_of_proof_poster.jpg" alt="Burden of Proof — KULARTS production poster" class="highlight-card__img" />
+          <h3>Burden of Proof</h3>
+          <p class="text-light">KULARTS &mdash; 2025</p>
         </div>
         <div class="highlight-card">
-          <div class="img-placeholder highlight-card__img">Performance photo</div>
-          <h3>In Between Stillness</h3>
-          <p class="text-light">CounterPulse, San Francisco &mdash; 2024</p>
+          <img src="/images/endure_bw.jpg" alt="Jess DeFranco performing in Endure" class="highlight-card__img" />
+          <h3>Endure</h3>
+          <p class="text-light">Dance Mission Theater &mdash; 2025</p>
         </div>
         <div class="highlight-card">
-          <div class="img-placeholder highlight-card__img">Performance photo</div>
-          <h3>Gravity's Echo</h3>
-          <p class="text-light">YBCA, San Francisco &mdash; 2023</p>
+          <img src="/images/queering.jpg" alt="Queering Pilipinx Aesthetics — KULARTS production poster" class="highlight-card__img" />
+          <h3>Queering Pilipinx Aesthetics</h3>
+          <p class="text-light">KULARTS &mdash; 2024</p>
         </div>
+      </div>
+      <div class="text-center" style="margin-top: var(--space-md);">
+        <a href="/work" class="btn">View All Work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section collaborators">
+    <div class="container text-center">
+      <p class="section-label">Collaborators</p>
+      <div class="collaborators__list">
+        <span>KULARTS</span>
+        <span>Garrett + Moulton Productions</span>
+        <span>Alyssa Eve Mitchel</span>
+        <span>Robert Moses Kin</span>
+        <span>Epiphany Dance Theater</span>
+        <span>Andrea Salazar</span>
+        <span>Kristin Damrow and Company</span>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  .hero-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+  }
+
+  .hero-home__image {
+    overflow: hidden;
+  }
+
+  .hero-home__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-home__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .hero-home__subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-light);
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .hero-home {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-home__image {
+      max-height: 60vh;
+    }
+
+    .hero-home__content {
+      padding: var(--space-lg) var(--space-md);
+      text-align: center;
+    }
+  }
+
   .intro {
     max-width: 700px;
     text-align: center;
@@ -78,6 +146,8 @@ import Hero from '../components/Hero.astro';
   .highlight-card__img {
     aspect-ratio: 3 / 4;
     margin-bottom: var(--space-sm);
+    width: 100%;
+    object-fit: cover;
   }
 
   @media (max-width: 768px) {

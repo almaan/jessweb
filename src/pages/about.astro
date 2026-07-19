@@ -9,22 +9,23 @@ import Hero from '../components/Hero.astro';
   <section class="section">
     <div class="container about-grid">
       <div class="about-portrait">
-        <div class="img-placeholder about-portrait__img">Portrait photo</div>
+        <img src="/images/main-portrait.jpg" alt="Jess DeFranco" class="about-portrait__img" />
       </div>
 
       <div class="about-content">
         <p class="section-label">Bio</p>
         <h2>Jess DeFranco</h2>
         <p>
-          Jess DeFranco is a contemporary dancer, choreographer, and movement artist based in the
-          San Francisco Bay Area. Her work draws on modern and contemporary dance traditions while
-          embracing improvisation, somatic practices, and site-specific performance.
+          I grew up in the Bay Area and am a San Francisco based dancer. After receiving
+          my Bachelor of Arts in Dance and Asian American Studies from San Francisco State University,
+          I began working as a freelance performing artist and dance educator.
         </p>
         <p>
-          With a deep commitment to embodied expression, Jess has performed with companies and
-          independent choreographers across the Bay Area. Her collaborative practice spans stage
-          performance, film, gallery installations, and community engagement.
+          My first collaboration with KULARTS was in 2022 and 2023 with "Nursing these Wounds",
+          followed by the "AntingAnting Project" and presenting my choreography in "Queering Pilipinx
+          Aesthetics" in 2024.
         </p>
+        <a href="/jess-defranco-resume.pdf" target="_blank" class="btn" style="margin-top: var(--space-sm);">Download Resume</a>
       </div>
     </div>
   </section>
@@ -35,41 +36,30 @@ import Hero from '../components/Hero.astro';
       <h2>Background</h2>
       <div class="training-grid">
         <div class="training-item">
-          <h3>Formal Training</h3>
+          <h3>San Francisco State University</h3>
+          <p class="training-item__years">2014–2018</p>
           <p class="text-light">
-            BFA in Dance from a leading conservatory program, with concentrated study in contemporary
-            technique, improvisation, and choreographic methods.
+            Bachelor of Arts in Dance, Minor in Asian American Studies. Member of the University Dance Theater Company.
           </p>
         </div>
         <div class="training-item">
-          <h3>Somatic Practices</h3>
+          <h3>Alonzo King LINES Ballet</h3>
+          <p class="training-item__years">Summer 2017</p>
           <p class="text-light">
-            Ongoing study in Alexander Technique, Feldenkrais Method, and Body-Mind Centering,
-            informing both her performance and teaching practice.
+            Summer intensive program at one of the world's premier contemporary ballet companies in San Francisco.
           </p>
         </div>
         <div class="training-item">
-          <h3>Continuing Study</h3>
+          <h3>Pacific Ballet Academy</h3>
+          <p class="training-item__years">2012–2014</p>
           <p class="text-light">
-            Regular workshops and intensives with internationally recognized choreographers and
-            movement researchers.
+            Student and Studio Company Member in Mountain View, CA.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container statement">
-      <p class="section-label">Artist Statement</p>
-      <blockquote>
-        I believe the body carries knowledge that words cannot hold. My work is an ongoing
-        inquiry into how movement can reveal the unseen — the tensions between stillness and
-        action, vulnerability and strength, self and space. I make dances that invite audiences
-        to feel before they understand.
-      </blockquote>
-    </div>
-  </section>
 </BaseLayout>
 
 <style>
@@ -92,23 +82,16 @@ import Hero from '../components/Hero.astro';
     margin-top: var(--space-md);
   }
 
-  .statement {
-    max-width: 750px;
-    margin: 0 auto;
-    text-align: center;
+  .training-item__years {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
   }
 
-  blockquote {
-    font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--color-text-light);
-    border: none;
-    padding: 0;
-  }
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr;
     }
