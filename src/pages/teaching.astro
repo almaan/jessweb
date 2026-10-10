@@ -2,28 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 
-const focus = [
-  {
-    title: 'Showing up fully from the start',
-    description:
-      'I encourage dancers to commit to the movement right away rather than just marking steps. Practicing full-out builds the genuine stamina, spatial awareness, and muscle memory needed to feel confident on stage.',
-  },
-  {
-    title: 'Bringing intention early',
-    description:
-      'We tap into emotional expression and dynamic intent early in the studio. When the feeling behind the movement becomes second nature, the technical execution follows naturally, leaving dancers free to truly shine in the theater.',
-  },
-  {
-    title: 'Deeply listening to the music',
-    description:
-      'I teach dancers how to break down and connect with musical structures. Developing that precise rhythmic timing allows them to really elevate the choreography and captivate whoever is watching.',
-  },
-  {
-    title: 'Cultivating versatility and focus',
-    description:
-      'My goal is to nurture adaptable, quick-studying artists who hold a deep respect for a choreographer’s technical vision while confidently holding space for their own artistic voice.',
-  },
-];
 ---
 
 <BaseLayout title="Teaching" description="Jess DeFranco teaches young dancers at San Francisco Youth Ballet, where she leads the young children's program.">
@@ -43,21 +21,6 @@ const focus = [
     </div>
   </section>
 
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <p class="section-label">In My Classes</p>
-      <h2>What We Focus On</h2>
-      <div class="focus-grid">
-        {focus.map((item) => (
-          <div class="focus-card reveal">
-            <h3>{item.title}</h3>
-            <p class="text-light">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container teaching-role reveal">
       <p class="section-label">Where I Teach</p>
@@ -66,7 +29,7 @@ const focus = [
         I have been a member of the faculty at San Francisco Youth Ballet since 2019. In 2022, I
         became head of the young children's program, where I guide our youngest dancers through
         their very first steps in ballet — helping them develop coordination, musicality, and a
-        genuine excitement for the studio.
+        genuine excitement for dance.
       </p>
       <a
         href="https://www.sanfranciscoyouthballet.org/faculty"
@@ -92,36 +55,6 @@ const focus = [
     line-height: 1.8;
   }
 
-  .focus-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-    margin-top: var(--space-md);
-  }
-
-  .focus-card {
-    padding: var(--space-md);
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-  }
-
-  .focus-grid .reveal:nth-child(2) {
-    transition-delay: 0.08s;
-  }
-
-  .focus-grid .reveal:nth-child(3) {
-    transition-delay: 0.16s;
-  }
-
-  .focus-grid .reveal:nth-child(4) {
-    transition-delay: 0.24s;
-  }
-
-  .focus-card h3 {
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
-  }
-
   .teaching-role {
     max-width: 750px;
     margin: 0 auto;
@@ -131,11 +64,5 @@ const focus = [
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: var(--space-md);
-  }
-
-  @media (max-width: 768px) {
-    .focus-grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
